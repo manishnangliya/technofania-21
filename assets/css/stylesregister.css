@@ -1,0 +1,393 @@
+/*===== GOOGLE FONTS =====*/
+@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap');
+
+/*===== VARIABLES CSS =====*/
+:root{
+
+  --nav-width: 68px;
+
+  /*===== Colors =====*/
+  --first-color: #4723D9;
+  --first-color-light: #AFA5D9;
+  --white-color: #F7F6FB;
+  
+  /*===== Font and typography =====*/
+  --body-font: 'Nunito', sans-serif;
+  --normal-font-size: 1rem;
+  
+  /*===== z index =====*/
+  --z-fixed: 100;
+}
+
+/*===== BASE =====*/
+*,::before,::after{
+  box-sizing: border-box;
+}
+
+body{
+  /* position: relative;
+  margin: var(--header-height) 0 0 0;
+  padding: 0 1rem;
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  transition: .5s; */
+  background: -webkit-linear-gradient(rgba(246, 247, 249, 0.8), rgba(246, 247, 249, 0.8)), url(https://upload.wikimedia.org/wikipedia/commons/8/8c/K2,_Mount_Godwin_Austen,_Chogori,_Savage_Mountain.jpg) no-repeat center center fixed;
+  background-image: url("https://wallpapercave.com/wp/wp2757874.gif");
+  font-family: "ppppins", sans-serif;
+  background-size: 100% 100%;
+  background-attachment: fixed;
+  width: 100%;
+  height: 580px;
+}
+
+a{
+  font-family: 'Balsamiq Sans', cursive;
+  text-decoration: none;
+}
+
+/*===== HEADER =====*/
+.clg {
+  /* position: absolute; */
+    /* top: .4rem;
+  left: 10%; */
+  margin-top: 3px;
+  padding-left: 4%;
+}
+
+.clg-logo {
+  border-radius: 100%;
+  height: 60px;
+  width: 60px;
+}
+
+.clg-name{
+  font-family: 'Balsamiq Sans', cursive;
+  display: inline-block;
+  max-width: 200px;
+  text-align: left;
+  text-shadow: 0 .05rem .1rem rgba(0, 0, 0, 1);
+  vertical-align: bottom;
+  font-size: 12px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 1);
+}
+
+
+.header{
+
+  width: 100%;
+  height: var(--header-height);
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+  /* background-color: var(--white-color); */
+  z-index: var(--z-fixed);
+  transition: .5s;
+}
+
+.header__toggle{
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.header__img{
+  width: 35px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.header__img img{
+  width: 40px;
+}
+
+/*===== NAV =====*/
+.l-navbar{
+  position: fixed;
+  top: 0;
+  left: -30%;
+  width: var(--nav-width);
+  height: 100vh;
+  background-color: rgba(9, 9, 32, 0.315);
+  padding: .5rem 1rem 0 0;
+  transition: .5s;
+  z-index: var(--z-fixed);
+}
+
+.nav{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.nav__logo, .nav__link{
+  display: grid;
+  grid-template-columns: max-content max-content;
+  align-items: center;
+  column-gap: 1rem;
+  padding: .5rem 0 .5rem 1.5rem;
+}
+
+.nav__logo{
+  margin-bottom: 2rem;
+}
+
+.nav__logo-icon{
+  font-family: 'Balsamiq Sans', cursive;
+  font-size: 1.25rem;
+  color: var(--white-color);
+}
+
+.nav__logo-name{
+  color: var(--white-color);
+  font-weight: 700;
+}
+
+.nav__link{
+  position: relative;
+  color: var(--first-color-light);
+  margin-bottom: 1.5rem;
+  transition: .3s;
+}
+
+.nav__link:hover{
+  color: var(--white-color);
+}
+
+.nav__icon{
+  font-size: 1.25rem;
+}
+
+/*Show navbar movil*/
+.show{
+  left: 0;
+}
+
+/*Add padding body movil*/
+.body-pd{
+  padding-left: calc(var(--nav-width) + 1rem);
+}
+
+/*Active links*/
+.active{
+  color: var(--white-color);
+}
+
+.active::before{
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 2px;
+  height: 32px;
+  background-color: var(--white-color);
+}
+
+/* ===== MEDIA QUERIES=====*/
+@media screen and (min-width: 768px){
+  body{
+    margin: calc(var(--header-height) + 1rem) 0 0 0;
+    padding-left: calc(var(--nav-width) + 2rem);
+  }
+
+  .header{
+    height: calc(var(--header-height) + 1rem);
+    padding: 0 2rem 0 calc(var(--nav-width) + 2rem);
+  }
+
+  .header__img{
+    width: 40px;
+    height: 60px;
+  }
+
+  .header__img img{
+    width: 45px;
+  }
+
+  .l-navbar{
+    left: 0;
+    padding: 1rem 1rem 0 0;
+  }
+  
+  /*Show navbar desktop*/
+  .show{
+    width: calc(var(--nav-width) + 156px);
+  }
+
+  /*Add padding body desktop*/
+  .body-pd{
+    padding-left: calc(var(--nav-width) + 188px);
+  }
+}
+
+
+
+h1 {
+  font-size: 40px;
+  text-align: center;
+  color: rgb(248, 245, 245);
+  font-family: 'Balsamiq Sans', cursive;
+  /* font-family: 'Ubuntu Condensed', sans-serif; */
+  /* margin:15px 0; */
+  
+}
+
+
+/* Registration */
+
+
+.contact-form{
+  background: lightyellow;
+  margin-top: 5%;
+  margin-bottom: 10%;
+  margin-left: 25%;
+  margin-right: 25%;
+  width: 50%;
+  height : 80%;
+}
+
+.contact-form .form-control1{
+  font-family: 'Balsamiq Sans', cursive;
+display: block;
+margin-right: auto;
+margin-left: auto;
+  border: 1px solid black;
+  border-radius:2px;
+  width: 40%;
+}
+.contact-form .form-control2{
+  font-family: 'Balsamiq Sans', cursive;
+display: block;
+margin-top:20px;
+margin-right: auto;
+margin-left: auto;
+  border: 1px solid black;
+  border-radius:2px;
+  width: 40%;
+}
+
+.align{
+text-align:center;
+}
+.contact-form .form-control{
+  font-family: 'Balsamiq Sans', cursive;
+  margin-top:10px;
+  margin-left:15px;
+  border: 1px solid black;
+  border-radius:2px;
+  /*border-radius:1rem;*/
+  width: 40%;
+}
+.contact-image{
+  text-align: center;
+}
+.contact-image img{
+  border-radius: 6rem;
+  width: 11%;
+  margin-top: -3%;
+
+}
+.contact-form form{
+  padding: 14%;
+}
+.contact-form form .row{
+  margin-bottom: -7%;
+}
+.contact-form h3{
+  font-family: 'Balsamiq Sans', cursive;
+  margin-bottom: 8%;
+  margin-top: -10%;
+  text-align: center;
+  color: #0062cc;
+}
+.contact-form .btnContact {
+  font-family: 'Balsamiq Sans', cursive;
+display: block;
+margin-top: 30px;
+margin-right: auto;
+margin-left: auto;
+  width: 50%;
+  border: none;
+  border-radius: 1rem;
+  padding: 1.5%;
+  background: #0062cc;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+}
+.btnContact:hover{
+  background-color: #f44336;
+  color: white;
+}
+/*.btnContactSubmit
+{
+  width: 50%;
+  border-radius: 1rem;
+  padding: 1.5%;
+  color: #fff;
+  background-color: #0062cc;
+  border: none;
+  cursor: pointer;
+}
+*/
+.success{
+  color: black;
+  text-align: center;
+  font-family: 'Balsamiq Sans', cursive;
+}
+
+.clg {
+  /* position: absolute; */
+    /* top: .4rem;
+  left: 10%; */
+  margin-top: 3px;
+  padding-left: 4%;
+}
+
+.clg-logo {
+  border-radius: 100%;
+  height: 50px;
+  width: 50px;
+}
+
+.clg-name{
+  font-family: 'Balsamiq Sans', cursive;
+  display: inline-block;
+  max-width: 200px;
+  text-align: left;
+  text-shadow: 0 .05rem .1rem rgba(0, 0, 0, 1);
+  vertical-align: bottom;
+  font-size: 12px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 1);
+}
+
+
+@media screen and (max-width: 768px)
+{
+
+  .clg{
+    padding-left: 40px;
+  }
+ .clg-name{
+   visibility: hidden;
+ }
+  
+}
+
+
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+   .form-control1{
+    width: 25%;
+    margin-top: 0;
+  }
+}
